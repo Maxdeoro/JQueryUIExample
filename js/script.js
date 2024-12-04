@@ -6,3 +6,4 @@ $('#button-icon').button({
     showLabel: false,
 });
 $('#tabs').tabs();
+$('#dialog').dialog();
