@@ -7,3 +7,24 @@ $('#button-icon').button({
 });
 $('#tabs').tabs();
 $('#dialog').dialog();
+//progressBar
+$(function() {
+    $('#Button').button();
+    $('#bar').progressbar({
+        value: 0,
+        change: function(event, ui) {
+            // alert('Event: ' + event.type);
+        },
+        complete: function(event, ui) {
+            alert('Event: ' + event.type);
+        },
+    });
+    $('#Button').click(function() {
+        let currentVal = $('#bar').progressbar('option','value');
+        if(currentVal < 100) {
+            currentVal = currentVal + 10;
+            $('#percent').text(currentVal + '%');
+            $('#bar').progressbar('option','value',currentVal);
+        }
+    });
+});
